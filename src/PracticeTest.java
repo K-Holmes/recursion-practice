@@ -6,7 +6,9 @@ public class PracticeTest {
         RecursionMethods rm = new RecursionMethods();
         System.out.println("Recursion simulator! We've got a couple methods to choose from");
         System.out.println("Factorial (f)\nSum Recursion (s)\nCountdown (c)\nSpell out a word (w)");
+        System.out.println("Double a Number (d)\nDeconstruct a Word(e)");
         String choice = sc.nextLine();
+
         if (choice.equalsIgnoreCase("f")){
             System.out.println("What number would you like to make a factorial of?");
             int factor = sc.nextInt();
@@ -30,6 +32,18 @@ public class PracticeTest {
             String word = sc.nextLine();
             System.out.println("\nSpell out a word:");
             rm.spell(word, 0);
+        }
+        else if (choice.equalsIgnoreCase("d")){
+            System.out.println("What number are we doubling?");
+            int doubling = sc.nextInt();
+            System.out.println("\nDouble "+doubling+":");
+            rm.doubleNum(doubling);
+        }
+        else if (choice.equalsIgnoreCase("e")){
+            System.out.println("What word are we breaking down?");
+            String phrase = sc.nextLine();
+            System.out.println("\nBreak down: "+phrase);
+            rm.deconstructWord(phrase, phrase.length());
         }
         else {
             System.out.println("Invalid choice");

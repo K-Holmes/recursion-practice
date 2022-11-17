@@ -51,5 +51,28 @@ public class RecursionMethods {
             return;
         }
     }
+
+    //doubles number until its 1 doubling away from hitting the cap (500)
+    public int doubleNum(int n){
+        if (n < 500) {
+            System.out.println(n);
+            return n * doubleNum(n * 2); // recursive call
+        }
+        else {
+            return 1;
+        }
+    }
+
+    //takes a word and slowly breaks it down by removing the last letter
+    public void deconstructWord(String str, int length){
+        if (str.length()!=0){
+            str=str.substring(0, length);
+            System.out.println(str);
+            deconstructWord(str, str.length()-1);
+        }
+        else {
+            return;
+        }
+    }
 }
 
